@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy for AI Sheet Filler">
+  <title>Privacy Policy - AI Sheet Filler</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">
+          <img src="assets/icon.svg" alt="AI Sheet Filler Logo">
+          <span>AI Sheet Filler</span>
+        </a>
+        <a href="https://github.com/popstas/mcp-sheet-filler" class="github-link" aria-label="GitHub Repository" target="_blank" rel="noopener noreferrer">
+          <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="legal-content">
+        <h1>Privacy Policy</h1>
+        <p><strong>Last Updated:</strong> January 2025</p>
+
+        <h2>1. Introduction</h2>
+        <p>This Privacy Policy explains how MCP Sheet Filler ("Service") handles information when you use our open-source MCP server for managing tabular data with Google Sheets.</p>
+
+        <h2>2. Information We Collect</h2>
+        <h3>2.1 User Identity</h3>
+        <p>When using HTTP transport, we collect your email address from your Google OAuth token for the purpose of:</p>
+        <ul>
+          <li>Authenticating requests</li>
+          <li>Per-user token isolation (if separate auth flow is used)</li>
+        </ul>
+
+        <h3>2.2 Optional Debug Logging</h3>
+        <p>If the <code>DEBUG_LOG</code> environment variable is configured by the server operator, the Service may log:</p>
+        <ul>
+          <li>Tool invocations and operations performed</li>
+          <li>Error messages and stack traces</li>
+          <li>Timestamps of operations</li>
+        </ul>
+        <p>Debug logs do NOT contain:</p>
+        <ul>
+          <li>Field values or cell contents from your spreadsheets</li>
+          <li>OAuth tokens or credentials</li>
+          <li>Personal data beyond what is necessary for debugging</li>
+        </ul>
+
+        <h2>3. Information We Do NOT Collect</h2>
+        <p>The Service does NOT:</p>
+        <ul>
+          <li>Store your spreadsheet data on our servers</li>
+          <li>Track your usage with cookies or analytics</li>
+          <li>Collect browsing history or device information</li>
+          <li>Share any information with third parties (beyond Google APIs)</li>
+        </ul>
+
+        <h2>4. Data Storage</h2>
+        <h3>4.1 Your Data Location</h3>
+        <p>All your tabular data is stored in Google Sheets documents that you own and control. The Service acts as a bridge to read and write this data but does not retain copies.</p>
+
+        <h3>4.2 Token Handling</h3>
+        <p><strong>HTTP Transport (Remote Deployment):</strong></p>
+        <ul>
+          <li>OAuth access tokens are validated per-request</li>
+          <li>Tokens are NOT stored on the server (neither on disk nor in persistent memory)</li>
+          <li>Each request is authenticated independently</li>
+          <li>This design prevents the server operator from accessing your Google credentials</li>
+        </ul>
+
+        <h2>5. Third-Party Services</h2>
+        <p>The Service integrates with Google services:</p>
+        <h3>5.1 Google Sheets API</h3>
+        <ul>
+          <li>Used to read and write data in your spreadsheets</li>
+          <li>Subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a></li>
+        </ul>
+
+        <h3>5.2 Google OAuth 2.0</h3>
+        <ul>
+          <li>Used for authentication</li>
+          <li>Token validation performed via Google's tokeninfo endpoint</li>
+          <li>Subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a></li>
+        </ul>
+
+        <h2>6. Data Retention</h2>
+        <h3>6.1 Spreadsheet Data</h3>
+        <p>Your data is retained in your Google Sheets according to your Google account settings. The Service does not control data retention in Google Sheets.</p>
+
+        <h3>6.2 Debug Logs</h3>
+        <p>If debug logging is enabled by the server operator:</p>
+        <ul>
+          <li>Log retention is controlled by the server operator</li>
+          <li>Logs are stored locally on the server where the Service runs</li>
+        </ul>
+
+        <h2>7. Your Rights</h2>
+        <h3>7.1 Data Access and Portability</h3>
+        <ul>
+          <li>Your data is stored in Google Sheets, which you fully control</li>
+          <li>You can export, modify, or delete your data at any time through Google Sheets</li>
+          <li>You can revoke the Service's access to your Google account at any time via <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google Account Permissions</a></li>
+        </ul>
+
+        <h3>7.2 GDPR and CCPA Rights</h3>
+        <p>Since your data is stored in Google Sheets:</p>
+        <ul>
+          <li>Data subject rights (access, correction, deletion, portability) are exercised through Google</li>
+          <li>See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> for details on exercising your rights</li>
+        </ul>
+
+        <h3>7.3 Token Revocation</h3>
+        <p>You can revoke access at any time:</p>
+        <ol>
+          <li>Visit <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google Account Permissions</a></li>
+          <li>Find "MCP Sheet Filler" (or the OAuth app name)</li>
+          <li>Click "Remove Access"</li>
+        </ol>
+
+        <h2>8. Security</h2>
+        <p>The Service implements security measures including:</p>
+        <ul>
+          <li>RFC 9728 MCP Authorization compliance</li>
+          <li>Token validation via Google's tokeninfo endpoint</li>
+          <li>Per-user authentication isolation</li>
+          <li>No server-side token storage (HTTP mode)</li>
+        </ul>
+
+        <h2>9. Children's Privacy</h2>
+        <p>The Service is not intended for use by children under 13 years of age. We do not knowingly collect information from children under 13.</p>
+
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be indicated by updating the "Last Updated" date. Continued use of the Service after changes constitutes acceptance of the updated policy.</p>
+
+        <h2>11. Contact</h2>
+        <p>For questions about this Privacy Policy, please:</p>
+        <ul>
+          <li>Open an issue on GitHub: <a href="https://github.com/popstas/mcp-sheet-filler/issues" target="_blank" rel="noopener noreferrer">https://github.com/popstas/mcp-sheet-filler/issues</a></li>
+          <li>Email: <a href="mailto:popstas@gmail.com">popstas@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a href="https://github.com/popstas/mcp-sheet-filler" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+        </div>
+        <div class="footer-links">
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

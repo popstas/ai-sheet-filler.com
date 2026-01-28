@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terms of Service for AI Sheet Filler">
+  <title>Terms of Service - AI Sheet Filler</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">
+          <img src="assets/icon.svg" alt="AI Sheet Filler Logo">
+          <span>AI Sheet Filler</span>
+        </a>
+        <a href="https://github.com/popstas/mcp-sheet-filler" class="github-link" aria-label="GitHub Repository" target="_blank" rel="noopener noreferrer">
+          <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="legal-content">
+        <h1>Terms of Service</h1>
+        <p><strong>Last Updated:</strong> January 2025</p>
+
+        <h2>1. Introduction</h2>
+        <p>These Terms of Service ("Terms") govern your use of the MCP Sheet Filler service ("Service"), an open-source Model Context Protocol (MCP) server for managing tabular data using Google Sheets as a storage backend.</p>
+        <p>By using this Service, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the Service.</p>
+
+        <h2>2. Service Description</h2>
+        <p>MCP Sheet Filler is an MCP server that provides tools for:</p>
+        <ul>
+          <li>Storing and managing tabular data in Google Sheets</li>
+          <li>Safely auto-filling data with no-overwrite protection</li>
+          <li>Managing field schemas and data validation</li>
+        </ul>
+        <p>The Service operates via HTTP transport with OAuth authentication for remote deployment.</p>
+
+        <h2>3. User Responsibilities</h2>
+        <h3>3.1 Google Account Security</h3>
+        <p>You are responsible for:</p>
+        <ul>
+          <li>Maintaining the security of your Google account credentials</li>
+          <li>Protecting OAuth tokens and credentials used with this Service</li>
+          <li>Any activity that occurs under your account</li>
+        </ul>
+
+        <h3>3.2 Data Management</h3>
+        <ul>
+          <li>All data is stored in your own Google Sheets documents</li>
+          <li>You are responsible for backing up your data</li>
+          <li>You are responsible for managing access permissions to your Google Sheets</li>
+        </ul>
+
+        <h3>3.3 Acceptable Use</h3>
+        <p>You agree not to:</p>
+        <ul>
+          <li>Use the Service for any unlawful purpose</li>
+          <li>Attempt to gain unauthorized access to other users' data</li>
+          <li>Interfere with or disrupt the Service</li>
+          <li>Use the Service to store illegal or harmful content</li>
+        </ul>
+
+        <h2>4. Data Storage and No-Overwrite Guarantee</h2>
+        <h3>4.1 Storage Location</h3>
+        <p>The Service does not store your data on its servers. All data is stored in Google Sheets documents that you own and control.</p>
+
+        <h3>4.2 No-Overwrite Protection</h3>
+        <p>The Service includes a no-overwrite feature that prevents accidental overwriting of existing data. The <code>save_object_no_overwrite</code> operation will never change non-empty values. This is a core feature of the Service.</p>
+
+        <h3>4.3 Definition of Empty Values</h3>
+        <p>Empty values are defined as: <code>null</code>, empty string, or whitespace-only string. Values such as <code>0</code>, <code>false</code>, and <code>"0"</code> are considered non-empty and will not be overwritten.</p>
+
+        <h2>5. Authentication and Token Handling</h2>
+        <h3>5.1 HTTP Transport</h3>
+        <p>When using HTTP transport:</p>
+        <ul>
+          <li>Authentication is performed via Google OAuth 2.0</li>
+          <li>Access tokens are validated per-request and are NOT stored on the server</li>
+          <li>Your identity is verified cryptographically via Google</li>
+        </ul>
+
+        <h2>6. Third-Party Services</h2>
+        <p>The Service integrates with:</p>
+        <ul>
+          <li><strong>Google Sheets API</strong>: For data storage and retrieval</li>
+          <li><strong>Google OAuth 2.0</strong>: For authentication</li>
+        </ul>
+        <p>Your use of these Google services is subject to Google's Terms of Service and Privacy Policy.</p>
+
+        <h2>7. Intellectual Property</h2>
+        <p>MCP Sheet Filler is open-source software. The source code is available under the MIT License. You may use, modify, and distribute the software in accordance with that license.</p>
+
+        <h2>8. Disclaimer of Warranties</h2>
+        <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+        <p>The project maintainers do not warrant that:</p>
+        <ul>
+          <li>The Service will be uninterrupted or error-free</li>
+          <li>Defects will be corrected</li>
+          <li>The Service is free of viruses or other harmful components</li>
+        </ul>
+
+        <h2>9. Limitation of Liability</h2>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE PROJECT MAINTAINERS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.</p>
+
+        <h2>10. Service Availability</h2>
+        <ul>
+          <li>The Service is provided without any Service Level Agreement (SLA)</li>
+          <li>The project maintainers may modify, suspend, or discontinue the Service at any time</li>
+          <li>Self-hosted deployments are your responsibility to maintain</li>
+        </ul>
+
+        <h2>11. Modifications to Terms</h2>
+        <p>We may modify these Terms at any time. Changes will be indicated by updating the "Last Updated" date. Continued use of the Service after changes constitutes acceptance of the modified Terms.</p>
+
+        <h2>12. Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law principles.</p>
+
+        <h2>13. Contact</h2>
+        <p>For questions about these Terms, please:</p>
+        <ul>
+          <li>Open an issue on GitHub: <a href="https://github.com/popstas/mcp-sheet-filler/issues" target="_blank" rel="noopener noreferrer">https://github.com/popstas/mcp-sheet-filler/issues</a></li>
+          <li>Email: <a href="mailto:popstas@gmail.com">popstas@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a href="https://github.com/popstas/mcp-sheet-filler" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+        </div>
+        <div class="footer-links">
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

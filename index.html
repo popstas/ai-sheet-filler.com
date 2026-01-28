@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Sheet Filler - MCP server for safely auto-filling Google Sheets data with no-overwrite protection">
+  <title>AI Sheet Filler - Safe Auto-Fill for Google Sheets</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">
+          <img src="assets/icon.svg" alt="AI Sheet Filler Logo">
+          <span>AI Sheet Filler</span>
+        </a>
+        <a href="https://github.com/popstas/mcp-sheet-filler" class="github-link" aria-label="GitHub Repository" target="_blank" rel="noopener noreferrer">
+          <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>AI Sheet Filler</h1>
+        <p>An MCP server that safely auto-fills tabular data in Google Sheets. Let AI complete your spreadsheets without overwriting existing data.</p>
+      </section>
+
+      <!-- Description -->
+      <section>
+        <h2>What is AI Sheet Filler?</h2>
+        <p>AI Sheet Filler is an open-source Model Context Protocol (MCP) server that provides tools for storing and safely auto-filling tabular data using Google Sheets as the storage backend. It enables AI agents to read objects, identify empty auto-fill fields, collect values, and write them back — all while preventing accidental overwrites of existing data.</p>
+        <p>Perfect for data enrichment, catalog completion, contact information gathering, and any task where you need AI to fill in missing spreadsheet data safely.</p>
+      </section>
+
+      <!-- Features -->
+      <section>
+        <h2>Key Features</h2>
+        <div class="features">
+          <div class="feature-item">
+            <h3>No-Overwrite Protection</h3>
+            <p>The core safety feature ensures that existing data is never accidentally overwritten. Only empty fields are filled, protecting your valuable data.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Google Sheets Integration</h3>
+            <p>Seamlessly works with your existing Google Sheets. All data stays in your Google account — we never store your data on our servers.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Field Validation</h3>
+            <p>Built-in type checking ensures data quality. Supports strings, numbers, dates, URLs, emails, JSON, and custom enums.</p>
+          </div>
+          <div class="feature-item">
+            <h3>HTTP Transport</h3>
+            <p>Remote deployment with OAuth authentication. Secure, per-user data isolation with RFC 9728 MCP Authorization compliance.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Per-User Isolation</h3>
+            <p>Each user's data is cryptographically isolated. Tokens are validated per-request and never stored on the server.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Open Source</h3>
+            <p>Fully open-source under ISC license. Self-host or use our hosted service. Full control over your data and deployment.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Videos -->
+      <section>
+        <h2>Video Tutorials</h2>
+        <div class="videos">
+          <div class="video-item">
+            <div class="video-placeholder">
+              <h4>Getting Started</h4>
+              <p>Learn how to set up and use AI Sheet Filler</p>
+            </div>
+          </div>
+          <div class="video-item">
+            <div class="video-placeholder">
+              <h4>Advanced Features</h4>
+              <p>Explore field validation and custom types</p>
+            </div>
+          </div>
+          <div class="video-item">
+            <div class="video-placeholder">
+              <h4>Use Cases</h4>
+              <p>See real-world examples and workflows</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Examples -->
+      <section>
+        <h2>Examples</h2>
+        <div class="examples">
+          <div class="example-item">
+            <h3>Example 1: Company Database Enrichment</h3>
+            <p class="example-prompt"><strong>User prompt:</strong> "Fill in missing company websites and founding dates"</p>
+            <p class="example-description"><strong>What happens:</strong> The AI agent identifies companies in your spreadsheet that have empty website or founded date fields. It searches for this information online, validates the data, and safely fills only the empty cells. Existing data remains untouched, ensuring your manual entries are never overwritten.</p>
+          </div>
+
+          <div class="example-item">
+            <h3>Example 2: Product Catalog Completion</h3>
+            <p class="example-prompt"><strong>User prompt:</strong> "Complete product descriptions and add missing specifications"</p>
+            <p class="example-description"><strong>What happens:</strong> The AI reads your product names and identifies which products are missing descriptions, specifications, or other required fields. It gathers detailed product information from various sources, validates the data against your field types, and updates the catalog without overwriting any existing product data you've already entered.</p>
+          </div>
+
+          <div class="example-item">
+            <h3>Example 3: Contact Information Gathering</h3>
+            <p class="example-prompt"><strong>User prompt:</strong> "Find email addresses and phone numbers for contacts missing this information"</p>
+            <p class="example-description"><strong>What happens:</strong> The AI processes your contact list, identifies which contacts are missing email addresses or phone numbers. It searches for verified contact information, validates email formats and phone number patterns according to your field type definitions, and fills only the empty contact fields. Your existing contact data stays safe.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a href="https://github.com/popstas/mcp-sheet-filler" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+        </div>
+        <div class="footer-links">
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
