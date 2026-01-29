@@ -199,6 +199,16 @@ section {
   color: var(--color-primary);
 }
 
+/* Demo video (single embed) */
+.demo-video {
+  max-height: 720px;
+  aspect-ratio: 16 / 9;
+  width: min(100%, 1280px); /* 1280 = 720 * 16/9 */
+  height: auto;
+  padding-bottom: 0;
+  margin: var(--spacing-lg) auto 0;
+}
+
 /* Videos */
 .videos {
   display: grid;
