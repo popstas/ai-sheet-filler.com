@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Privacy Policy for AI Sheet Filler">
   <title>Privacy Policy - AI Sheet Filler</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -28,10 +29,10 @@
     <div class="container">
       <div class="legal-content">
         <h1>Privacy Policy</h1>
-        <p><strong>Last Updated:</strong> January 2025</p>
+        <p><strong>Last Updated:</strong> February 2026</p>
 
         <h2>1. Introduction</h2>
-        <p>This Privacy Policy explains how MCP Sheet Filler ("Service") handles information when you use our open-source MCP server for managing tabular data with Google Sheets.</p>
+        <p>This Privacy Policy explains how AI Sheet Filler ("Service") handles information when you use our open-source MCP server for managing tabular data with Google Sheets.</p>
 
         <h2>2. Information We Collect</h2>
         <h3>2.1 User Identity</h3>
@@ -42,18 +43,16 @@
         </ul>
 
         <h3>2.2 Optional Debug Logging</h3>
-        <p>If the <code>DEBUG_LOG</code> environment variable is configured by the server operator, the Service may log:</p>
+        <p>The Service may log (when the server operator enables debug logging):</p>
         <ul>
           <li>Tool invocations and operations performed</li>
           <li>Error messages and stack traces</li>
           <li>Timestamps of operations</li>
         </ul>
-        <p>Debug logs do NOT contain:</p>
-        <ul>
-          <li>Field values or cell contents from your spreadsheets</li>
-          <li>OAuth tokens or credentials</li>
-          <li>Personal data beyond what is necessary for debugging</li>
-        </ul>
+        <p>Logs collected with the private mask do not contain field values, OAuth tokens, or other unmasked personal data.</p>
+
+        <h3>2.3 Website Analytics</h3>
+        <p>The ai-sheet-filler.com website may use Google Analytics. For that processing, <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> applies.</p>
 
         <h2>3. Information We Do NOT Collect</h2>
         <p>The Service does NOT:</p>
@@ -69,13 +68,8 @@
         <p>All your tabular data is stored in Google Sheets documents that you own and control. The Service acts as a bridge to read and write this data but does not retain copies.</p>
 
         <h3>4.2 Token Handling</h3>
-        <p><strong>HTTP Transport (Remote Deployment):</strong></p>
-        <ul>
-          <li>OAuth access tokens are validated per-request</li>
-          <li>Tokens are NOT stored on the server (neither on disk nor in persistent memory)</li>
-          <li>Each request is authenticated independently</li>
-          <li>This design prevents the server operator from accessing your Google credentials</li>
-        </ul>
+        <p><strong>Access tokens:</strong> They are not stored on the server (neither on disk nor in persistent memory), are validated per-request, and are returned only to the client; the server cannot use stored access tokens.</p>
+        <p><strong>When the built-in OAuth Authorization Server is used:</strong> The Service stores in SQLite (via <code>AUTH_DB_PATH</code>) mappings of opaque refresh tokens to Google refresh tokens and registered OAuth client data (client_id, client_secret, redirect_uris). Access tokens are still not stored and are returned only to the client.</p>
 
         <h2>5. Third-Party Services</h2>
         <p>The Service integrates with Google services:</p>
@@ -132,7 +126,8 @@
           <li>RFC 9728 MCP Authorization compliance</li>
           <li>Token validation via Google's tokeninfo endpoint</li>
           <li>Per-user authentication isolation</li>
-          <li>No server-side token storage (HTTP mode)</li>
+          <li>Access tokens are never stored on the server; when the OAuth Authorization Server is used, only refresh token mappings and client registration data are stored in SQLite (<code>AUTH_DB_PATH</code>)</li>
+          <li>Logs collected with the private mask do not contain sensitive data</li>
         </ul>
 
         <h2>9. Children's Privacy</h2>
@@ -159,7 +154,7 @@
         </div>
         <div class="footer-links">
           <a href="terms.html">Terms of Service</a>
-          <a href="privacy.html">Privacy Policy</a>
+          <a href="privacy.html" aria-current="page">Privacy Policy</a>
         </div>
       </div>
     </div>
