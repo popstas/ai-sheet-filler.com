@@ -34,6 +34,10 @@
         <h2>1. Introduction</h2>
         <p>This Privacy Policy explains how AI Sheet Filler ("Service") handles information when you use our open-source MCP server for managing tabular data with Google Sheets.</p>
 
+        <h3>1.1 Scope and data controller</h3>
+        <p>This Privacy Policy applies to the <strong>hosted</strong> AI Sheet Filler service offered at ai-sheet-filler.com. For this hosted offering, the <strong>data controller</strong> (operator) is the operator of ai-sheet-filler.com (contact: see section 12).</p>
+        <p>If you <strong>self-host</strong> the Service (run the server yourself), you are the data controller for that instance. You are responsible for complying with applicable data protection law and should provide your users with your own privacy policy. This document does not cover self-hosted deployments.</p>
+
         <h2>2. Information We Collect</h2>
         <h3>2.1 User Identity</h3>
         <p>When using HTTP transport, we collect your email address from your Google OAuth token for the purpose of:</p>
@@ -54,14 +58,15 @@
         <h3>2.3 Website Analytics</h3>
         <p>The ai-sheet-filler.com website may use Google Analytics. For that processing, <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> applies.</p>
 
-        <h2>3. Information We Do NOT Collect</h2>
-        <p>The Service does NOT:</p>
+        <h2>3. Information We Do NOT Collect (Service)</h2>
+        <p>The Service (the MCP server) does NOT:</p>
         <ul>
           <li>Store your spreadsheet data on our servers</li>
           <li>Track your usage with cookies or analytics</li>
           <li>Collect browsing history or device information</li>
           <li>Share any information with third parties (beyond Google APIs)</li>
         </ul>
+        <p>The above applies only to the Service. The ai-sheet-filler.com website may use analytics as described in section 2.3.</p>
 
         <h2>4. Data Storage</h2>
         <h3>4.1 Your Data Location</h3>
@@ -69,7 +74,7 @@
 
         <h3>4.2 Token Handling</h3>
         <p><strong>Access tokens:</strong> They are not stored on the server (neither on disk nor in persistent memory), are validated per-request, and are returned only to the client; the server cannot use stored access tokens.</p>
-        <p><strong>When the built-in OAuth Authorization Server is used:</strong> The Service stores in SQLite (via <code>AUTH_DB_PATH</code>) mappings of opaque refresh tokens to Google refresh tokens and registered OAuth client data (client_id, client_secret, redirect_uris). Access tokens are still not stored and are returned only to the client.</p>
+        <p><strong>When the built-in OAuth Authorization Server is used:</strong> The Service stores in SQLite (via <code>AUTH_DB_PATH</code>) mappings of opaque refresh tokens to Google refresh tokens and registered OAuth client data (client_id, client_secret, redirect_uris). Access tokens are still not stored and are returned only to the client. Token exchange and API calls use TLS in transit. Access to the auth database is restricted (least privilege) to the Service process only.</p>
 
         <h2>5. Third-Party Services</h2>
         <p>The Service integrates with Google services:</p>
@@ -86,33 +91,42 @@
           <li>Subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a></li>
         </ul>
 
-        <h2>6. Data Retention</h2>
-        <h3>6.1 Spreadsheet Data</h3>
+        <h2>6. Google API Services User Data Policy (Limited Use)</h2>
+        <p>Use of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+        <ul>
+          <li>We do not sell user data received from Google APIs</li>
+          <li>We do not use it for advertising or user profiling</li>
+          <li>We do not share it with third parties (except as required to provide the Service, e.g. Google's own APIs)</li>
+          <li>We use it only to provide the functionality you see: reading and safely filling your spreadsheets at your request</li>
+        </ul>
+
+        <h2>7. Data Retention</h2>
+        <h3>7.1 Spreadsheet Data</h3>
         <p>Your data is retained in your Google Sheets according to your Google account settings. The Service does not control data retention in Google Sheets.</p>
 
-        <h3>6.2 Debug Logs</h3>
+        <h3>7.2 Debug Logs</h3>
         <p>If debug logging is enabled by the server operator:</p>
         <ul>
           <li>Log retention is controlled by the server operator</li>
           <li>Logs are stored locally on the server where the Service runs</li>
         </ul>
 
-        <h2>7. Your Rights</h2>
-        <h3>7.1 Data Access and Portability</h3>
+        <h2>8. Your Rights</h2>
+        <h3>8.1 Data Access and Portability</h3>
         <ul>
           <li>Your data is stored in Google Sheets, which you fully control</li>
           <li>You can export, modify, or delete your data at any time through Google Sheets</li>
           <li>You can revoke the Service's access to your Google account at any time via <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google Account Permissions</a></li>
         </ul>
 
-        <h3>7.2 GDPR and CCPA Rights</h3>
+        <h3>8.2 GDPR and CCPA Rights</h3>
         <p>Since your data is stored in Google Sheets:</p>
         <ul>
           <li>Data subject rights (access, correction, deletion, portability) are exercised through Google</li>
           <li>See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a> for details on exercising your rights</li>
         </ul>
 
-        <h3>7.3 Token Revocation</h3>
+        <h3>8.3 Token Revocation</h3>
         <p>You can revoke access at any time:</p>
         <ol>
           <li>Visit <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google Account Permissions</a></li>
@@ -120,7 +134,7 @@
           <li>Click "Remove Access"</li>
         </ol>
 
-        <h2>8. Security</h2>
+        <h2>9. Security</h2>
         <p>The Service implements security measures including:</p>
         <ul>
           <li>RFC 9728 MCP Authorization compliance</li>
@@ -130,13 +144,13 @@
           <li>Logs collected with the private mask do not contain sensitive data</li>
         </ul>
 
-        <h2>9. Children's Privacy</h2>
+        <h2>10. Children's Privacy</h2>
         <p>The Service is not intended for use by children under 13 years of age. We do not knowingly collect information from children under 13.</p>
 
-        <h2>10. Changes to This Policy</h2>
+        <h2>11. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time. Changes will be indicated by updating the "Last Updated" date. Continued use of the Service after changes constitutes acceptance of the updated policy.</p>
 
-        <h2>11. Contact</h2>
+        <h2>12. Contact</h2>
         <p>For questions about this Privacy Policy, please:</p>
         <ul>
           <li>Open an issue on GitHub: <a href="https://github.com/popstas/mcp-sheet-filler/issues" target="_blank" rel="noopener noreferrer">https://github.com/popstas/mcp-sheet-filler/issues</a></li>
