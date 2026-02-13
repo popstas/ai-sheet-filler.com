@@ -74,8 +74,8 @@
         <p>All your tabular data is stored in Google Sheets documents that you own and control. The Service acts as a bridge to read and write this data but does not retain copies.</p>
 
         <h3>4.2 Token Handling</h3>
-        <p><strong>Access tokens:</strong> They are not stored on the server (neither on disk nor in persistent memory), are validated per-request, and are returned only to the client; the server cannot use stored access tokens.</p>
-        <p><strong>When the built-in OAuth Authorization Server is used:</strong> The Service stores in SQLite (via <code>AUTH_DB_PATH</code>) mappings of opaque refresh tokens to Google refresh tokens and registered OAuth client data (client_id, client_secret, redirect_uris). Access tokens are still not stored and are returned only to the client. Token exchange and API calls use TLS in transit. Access to the auth database is restricted (least privilege) to the Service process only.</p>
+        <p><strong>Access tokens:</strong> They are validated per-request and returned only to the client. During the OAuth code exchange flow, a Google access token is temporarily held in the server database for a maximum of 10 minutes; it is single-use and deleted immediately after exchange or on expiry.</p>
+        <p><strong>When the built-in OAuth Authorization Server is used:</strong> The Service stores in SQLite (via <code>AUTH_DB_PATH</code>) mappings of opaque refresh tokens to Google refresh tokens, registered OAuth client data (client_id, client_secret, redirect_uris), and transient OAuth flow state (pending authorizations, pending Google auth requests). Transient entries are single-use with a 10-minute TTL. Token exchange and API calls use TLS in transit. Access to the auth database is restricted (least privilege) to the Service process only.</p>
 
         <h2>5. Third-Party Services</h2>
         <p>The Service integrates with Google services:</p>
@@ -142,7 +142,7 @@
           <li>RFC 9728 MCP Authorization compliance</li>
           <li>Token validation via Google's tokeninfo endpoint</li>
           <li>Per-user authentication isolation</li>
-          <li>Access tokens are never stored on the server; when the OAuth Authorization Server is used, only refresh token mappings and client registration data are stored in SQLite (<code>AUTH_DB_PATH</code>)</li>
+          <li>Access tokens are not persistently stored on the server; during OAuth code exchange, they are temporarily held in SQLite (max 10 min, single-use, auto-deleted). Only refresh token mappings, client registrations, and transient OAuth flow state are stored in SQLite (<code>AUTH_DB_PATH</code>)</li>
           <li>Logs collected with the private mask do not contain sensitive data</li>
         </ul>
 
